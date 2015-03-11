@@ -9,4 +9,9 @@
     <string name="erase">Erase</string>
     <string name="save">Save</string>
     <string name="paint">Paint</string>
+    <string name="gesture">Gesture</string>
+    <string name="text">Text</string>
+    <string name="image">Image</string>
+    <string name="submit">Submit</string>
+
 </resources>

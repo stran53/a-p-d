@@ -6,8 +6,16 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 
 /**
  * Created by steven on 2/19/15.
@@ -15,7 +23,7 @@ import android.view.View;
 public class DrawingView extends View {
 
     //drawing path
-    private Path drawPath;
+    private CustomPath drawPath;
     //drawing and canvas paint
     private Paint drawPaint, canvasPaint;
     //initial color
@@ -25,18 +33,21 @@ public class DrawingView extends View {
     //canvas bitmap
     private Bitmap canvasBitmap;
 
+    private Context context;
+
     public DrawingView(Context context, AttributeSet attrs){
         super(context, attrs);
         setupDrawing();
+        this.context = context;
     }
 
     private void setupDrawing(){
-        drawPath = new Path();
+        drawPath = new CustomPath();
         drawPaint = new Paint();
 
         drawPaint.setColor(paintColor);
         drawPaint.setAntiAlias(true);
-        drawPaint.setStrokeWidth(20);
+        drawPaint.setStrokeWidth(35);
         drawPaint.setStyle(Paint.Style.STROKE);
         drawPaint.setStrokeJoin(Paint.Join.ROUND);
         drawPaint.setStrokeCap(Paint.Cap.ROUND);
@@ -68,17 +79,52 @@ public class DrawingView extends View {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 drawPath.moveTo(touchX, touchY);
+                //Log.d("xTag", Float.toString(touchX));
+                //Log.d("yTag", Float.toString(touchY));
                 break;
             case MotionEvent.ACTION_MOVE:
                 drawPath.lineTo(touchX, touchY);
                 break;
             case MotionEvent.ACTION_UP:
+                //drawPaint.setColor(0xEE330000);
                 drawCanvas.drawPath(drawPath, drawPaint);
                 drawPath.reset();
                 break;
             default:
                 return false;
         }
+//        CustomPath customPath = new CustomPath();
+//        try
+//        {
+//            String FILENAME = "customPath_file";
+//            FileOutputStream fos = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
+//            ObjectOutputStream out = new ObjectOutputStream(fos);
+//            out.writeObject(drawPath);
+//            out.close();
+//            fos.close();
+//            System.out.printf("Serialized data is saved in customPath_file");
+//        }catch(IOException i)
+//        {
+//            i.printStackTrace();
+//        }
+//
+//        //reading
+//        try {
+//            FileInputStream fis = context.openFileInput("customPath_file");
+//            ObjectInputStream is = new ObjectInputStream(fis);
+//            try {
+//                customPath = (CustomPath)is.readObject();
+//            }catch(ClassNotFoundException c){
+//
+//            }
+//                is.close();
+//                fis.close();
+//
+//        }catch(IOException i)
+//        {
+//            i.printStackTrace();
+//        }
+
         invalidate();
         return true;
 
