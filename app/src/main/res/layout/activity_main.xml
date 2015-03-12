@@ -124,5 +124,15 @@
                 android:gravity="center"
                 android:layout_margin="5dp"
             />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="delete"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/rounded1"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="deleteClicked"
+                />
         </LinearLayout>
 </LinearLayout>

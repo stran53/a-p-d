@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.steven.myapplication.backend.myApi.MyApi;
@@ -49,6 +50,8 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
 
 class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
