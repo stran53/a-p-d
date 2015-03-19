@@ -1,8 +1,3 @@
-/*
-   For step-by-step instructions on connecting your Android application to this backend module,
-   see "App Engine Java Endpoints Module" template documentation at
-   https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints
-*/
 
 package com.example.steven.myapplication.backend;
 
@@ -13,9 +8,9 @@ import com.google.api.server.spi.config.ApiNamespace;
 import javax.inject.Named;
 
 /**
- * An endpoint class we are exposing
- */
-@Api(name = "myApi", version = "v1", namespace = @ApiNamespace(ownerDomain = "backend.myapplication.steven.example.com", ownerName = "backend.myapplication.steven.example.com", packagePath = ""))
+* An endpoint class we are exposing
+*/
+@Api(name = "myApi", version = "v1", namespace = @ApiNamespace(ownerDomain = "backend2.myapplication.steven.example.com", ownerName = "backend2.myapplication.steven.example.com", packagePath = ""))
 public class MyEndpoint {
 
     /**

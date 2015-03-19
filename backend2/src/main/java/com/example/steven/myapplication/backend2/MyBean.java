@@ -1,17 +1,17 @@
-package com.example.steven.myapplication.backend2;
-
-/**
- * The object model for the data we are sending through endpoints
- */
-public class MyBean {
-
-    private String myData;
-
-    public String getData() {
-        return myData;
-    }
-
-    public void setData(String data) {
-        myData = data;
-    }
-}
+//package com.example.steven.myapplication.backend2;
+//
+///**
+// * The object model for the data we are sending through endpoints
+// */
+//public class MyBean {
+//
+//    private String myData;
+//
+//    public String getData() {
+//        return myData;
+//    }
+//
+//    public void setData(String data) {
+//        myData = data;
+//    }
+//}
