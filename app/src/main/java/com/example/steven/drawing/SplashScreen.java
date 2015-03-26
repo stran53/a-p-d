@@ -31,7 +31,7 @@ public class SplashScreen extends Activity {
                 // This method will be executed once the timer is over
                 // Start your app main activity
 
-                Intent j = new Intent(SplashScreen.this, MenuActivity.class);
+                Intent j = new Intent(SplashScreen.this, SpotifyActivity.class);
                 startActivity(j);
 
                 // close this activity
