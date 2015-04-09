@@ -13,9 +13,15 @@ import java.util.ArrayList;
 public class CustomPath extends Path implements Serializable {
 
     private static final long serialVersionUID = -5974912367682897467L;
-
+    private int color;
     private ArrayList<PathAction> actions = new ArrayList<CustomPath.PathAction>();
 
+    public void setColor(int color) {
+        this.color = color;
+    }
+    public int getColor() {
+        return color;
+    }
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException{
         in.defaultReadObject();
         drawThisPath();

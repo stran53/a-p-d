@@ -39,6 +39,7 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.2.+'
     compile 'com.spotify.sdk:spotifysdk:1.0.0-beta8@aar'
     compile files('libs/jMusixMatch-1.1.2.jar')
+    compile files('libs/gson-2.3.1.jar')
 }
 
 repositories {
