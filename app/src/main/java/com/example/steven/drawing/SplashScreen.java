@@ -12,7 +12,7 @@ import android.os.Handler;
 //TIMED SPLASH
 public class SplashScreen extends Activity {
 
-    private static int TIME = 3000;
+    private static int TIME = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -31,7 +31,7 @@ public class SplashScreen extends Activity {
                 // This method will be executed once the timer is over
                 // Start your app main activity
 
-                Intent j = new Intent(SplashScreen.this, MenuActivity.class);
+                Intent j = new Intent(SplashScreen.this, MainMenuActivity.class);
                 startActivity(j);
 
                 // close this activity
